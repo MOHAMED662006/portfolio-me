@@ -1,0 +1,237 @@
+/* ===== Reset ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+/* ===== Navbar ===== */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#020617;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap; /* 👈 مهم */
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ===== Hero ===== */
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:25px;
+    padding:14px 32px;
+    border:none;
+    background:#38bdf8;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #38bdf8;
+}
+
+/* ===== Sections ===== */
+section{
+    padding:80px 60px;
+    background:#0f172a;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:32px;
+    color:#38bdf8;
+}
+
+/* ===== About Image ===== */
+#about img{
+    display:block;
+    margin:25px auto;
+    width:180px;
+    border-radius:50%;
+    border:4px solid #38bdf8;
+}
+
+/* ===== Grid ===== */
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+/* ===== Cards ===== */
+.box{
+    background:#020617;
+    padding:18px;              /* 👈 أصغر */
+    border-radius:16px;
+    transition:.3s;
+    text-align:center;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    min-height:unset;          /* 👈 مهم جداً */
+
+}
+
+.box:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 10px 25px rgba(56,189,248,.35);
+}
+
+/* ===== Skills ===== */
+.skill{
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.skill p{
+    margin-bottom:6px;
+}
+
+.skill-bar{
+    height:8px;
+    background:#1e293b;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background:#38bdf8;
+}
+
+/* ===== Footer ===== */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:768px){
+
+    nav{
+        padding:15px 20px;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        gap:15px;
+        font-size:14px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    section{
+        padding:60px 20px;
+    }
+
+    .box{
+        min-height:100px;
+        font-size:16px;
+  
+
+    }
+
+}
+.project-img{
+    width:100%;
+    height:160px;        /* 👈 حجم ثابت */
+    object-fit:contain;  /* 👈 يمنع القص */
+    background:#020617;
+    border-radius:12px;
+
+}
+
+.project-content h3{
+    font-size:18px;
+    line-height:1.4x;
+}
+#about img{
+    display:block;
+    margin:25px auto;
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #38bdf8;
+}
+
+
+
+

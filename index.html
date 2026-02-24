@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Abdalrahman | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav>
+    <div class="logo">PORTFOLIO</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ===== Cover / Hero ===== -->
+<section class="hero" id="home">
+    <h1>Hi, I'm <span>Mohamed Abdalrahman</span></h1>
+    <p>Front-End Web Developer</p>
+    <button class="btn" onclick="scrollToProjects()">Check my work</button>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about">
+    <h2 class="title">About Me</h2>
+
+    <!-- غير اسم الصورة -->
+    <img src="me.jpg" alt="My Photo">
+
+    <p style="text-align:center;max-width:700px;margin:auto;color:#cbd5e1;">
+        I am a passionate Junior Web Developer skilled in HTML, CSS, and JavaScript.
+        I enjoy building responsive, user-friendly websites and continuously improving
+        my front-end development skills. My goal is to become a professional Full-Stack Developer.
+    </p>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills">
+    <h2 class="title">Skills</h2>
+
+    <div style="max-width:600px;margin:auto;">
+
+        <div class="skill">
+            <p>HTML</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width:90%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>CSS</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width:85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width:70%"></div>
+            </div>
+        </div>
+
+    </div>
+
+<section id="projects"></section>
+<div class="box" onclick="openImage('cert1.png')">
+    <div class="project-content">
+        <img src="ic3.jpg" alt="Certificate" class="project-img">
+        <h3>IC3 Spark</h3>
+    </div>
+</div>
+
+<div class="box" onclick="openImage('cert2.png')">
+    <div class="project-content">
+        <img src="python.jpg" alt="Certificate" class="project-img">
+        <h3>Pre-Programming Using Python</h3>
+    </div>
+</div>
+
+<div class="box" onclick="openImage('cert3.png')">
+    <div class="project-content">
+        <img src="web.jpg" alt="Certificate" class="project-img">
+        <h3>Front-End Web Development</h3>
+    </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section id="services">
+    <h2 class="title">Services</h2>
+
+    <div class="grid-3">
+        <div class="box">Landing Page Design</div>
+        <div class="box">Responsive Websites</div>
+        <div class="box">Website Fixing</div>
+    </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+    <h2 class="title">Contact Info</h2>
+
+    <div class="grid-3">
+        <div class="box">📧 maassyy4@gmail.com</div>
+        <div class="box">📱 01115035807</div>
+        <div class="box">📍 Egypt</div>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    © 2026 Mohamed Abdalrahman — All Rights Reserved
+</footer>
+
+<!-- ===== Script ===== -->
+<script>
+function scrollToProjects(){
+    document.getElementById("projects").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+</script>
+
+</body>
+</html>
+<head><link rel="stylesheet" href="style.css"></head>
