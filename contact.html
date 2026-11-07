@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | ARCH.DEV</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  html,body{margin:0;padding:0;scroll-behavior:smooth}
+  body{overscroll-behavior:none}
+  ::-webkit-scrollbar{display:none}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  .toast{transform:translateY(20px);opacity:0;pointer-events:none;transition:all .35s ease}
+  .toast.show{transform:translateY(0);opacity:1}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .floaty{animation:floaty 6s ease-in-out infinite}
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { darkMode: "class", theme: { extend: {
+  colors: { "inverse-surface":"#e5e1e4","on-primary-container":"#fff6f5","surface-dim":"#131315","surface-tint":"#ffb4ab","outline-variant":"#5c403c","surface":"#131315","on-surface-variant":"#e6bdb8","surface-container":"#201f21","secondary-container":"#e10111","error":"#ffb4ab","primary":"#ffb4ab","on-background":"#e5e1e4","outline":"#ac8884","surface-container-low":"#1c1b1d","surface-container-lowest":"#0e0e10","primary-container":"#dc2626","on-surface":"#e5e1e4","secondary":"#ffb4aa","surface-bright":"#39393b","surface-container-high":"#2a2a2c","surface-container-highest":"#353437","on-primary":"#690005","secondary-fixed-dim":"#ffb4aa" },
+  borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+  spacing: { "space-xl":"2.5rem","margin-mobile":"1.25rem","gutter-lg":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin":"2rem","space-md":"1rem","space-lg":"1.5rem","margin-desktop":"3rem","gutter-sm":"1rem","gutter":"1.5rem" },
+  fontFamily: { "body-md":["Plus Jakarta Sans"],"label-caps":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"code-lg":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"] },
+  fontSize: {
+    "body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],
+    "label-caps":["11px",{lineHeight:"16px",fontWeight:"600"}],
+    "headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],
+    "code-md":["13px",{lineHeight:"20px",fontWeight:"400"}],
+    "headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],
+    "headline-lg":["36px",{lineHeight:"44px",fontWeight:"700"}],
+    "display-hero":["64px",{lineHeight:"72px",fontWeight:"800"}],
+    "code-lg":["15px",{lineHeight:"24px",fontWeight:"500"}],
+    "body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],
+    "body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}] }
+}}};
+</script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter">
+    <a class="flex items-center gap-space-sm group" href="home.html">
+      <img alt="Logo" class="h-8 w-8 rounded-full object-cover" src="me.jpg"/>
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface group-hover:text-primary transition-colors">ARCH.DEV</span>
+        <span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">CREATIVE ENG</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-space-sm p-space-xs rounded-full bg-surface-container-lowest/60 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+      <a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="home.html">Home</a>
+      <a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="projct.html">Projects</a>
+      <a aria-current="page" class="px-space-md py-space-xs bg-primary-container text-on-primary-container font-headline-sm rounded-lg" href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-space-md">
+      <a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-xs rounded-lg font-headline-sm text-headline-sm bg-primary-container text-on-primary-container shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:brightness-110 active:scale-95 transition-all" href="#connect">Let's Talk</a>
+      <img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_10px_rgba(220,38,38,0.3)]" src="me.jpg"/>
+    </div>
+  </div>
+  <!-- mobile nav -->
+  <nav class="md:hidden flex justify-center gap-space-lg pb-space-sm font-body-sm text-body-sm">
+    <a class="text-on-surface-variant" href="home.html">Home</a>
+    <a class="text-on-surface-variant" href="projct.html">Projects</a>
+    <a class="text-primary font-semibold" href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="relative w-full pt-28 md:pt-20 overflow-hidden">
+  <!-- Ambient glows -->
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-primary-container/20 via-primary-container/5 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
+  <div class="absolute top-[40rem] -left-32 w-[600px] h-[400px] bg-secondary-container/10 blur-[130px] pointer-events-none rounded-full"></div>
+  <div class="absolute top-[70rem] -right-24 w-[500px] h-[500px] bg-primary-container/10 blur-[150px] pointer-events-none rounded-full"></div>
+
+  <!-- HERO -->
+  <section class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop pt-space-xl pb-12">
+    <div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-low/90 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] mb-space-lg">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container shadow-[0_0_10px_#dc2626]"></span>
+      </span>
+      <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">Open for new projects</span>
+      <span class="text-outline-variant font-code-md">|</span>
+      <span class="font-code-md text-code-md text-primary">Reply within 24h</span>
+    </div>
+    <span class="block font-code-lg text-code-lg text-primary tracking-wide mb-space-xs">// INITIATE PROTOCOL</span>
+    <h1 class="font-display-hero text-[40px] leading-[48px] md:text-display-hero tracking-tight text-on-surface max-w-4xl">
+      Let's build something <span class="text-transparent bg-clip-text bg-gradient-to-r from-on-surface via-primary to-primary-container">unforgettable</span> together.
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-md leading-relaxed">
+      Have a project, an idea, or just want to say hi? Reach out through any channel below and I'll get back to you as soon as possible.
+    </p>
+  </section>
+
+  <!-- MAIN GRID -->
+  <section class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+
+      <!-- DIRECT EMAIL CARD -->
+      <div class="lg:col-span-7" id="connect">
+        <div class="relative rounded-3xl bg-gradient-to-b from-surface-container to-surface-container-low p-space-lg md:p-space-xl overflow-hidden shadow-[0_20px_70px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
+          <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+          <div class="relative z-10 flex flex-col gap-space-lg">
+            <div class="flex items-center justify-between pb-space-md border-b border-white/5">
+              <div class="flex items-center gap-space-xs">
+                <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-surface-bright"></span>
+                <span class="ml-space-xs font-code-md text-code-md text-outline">direct_channel.sh</span>
+              </div>
+              <span class="font-code-md text-code-md text-primary">ONLINE</span>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-code-lg text-code-lg text-primary">// WRITE ME DIRECTLY</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">Drop me an email</h2>
+              <p class="text-on-surface-variant">Tell me about your project, timeline and goals. I read every message.</p>
+            </div>
+            <div class="p-space-lg rounded-2xl bg-surface-container-lowest/90 flex items-center gap-space-md">
+              <span class="material-symbols-outlined text-primary text-[32px]">mail</span>
+              <span class="font-code-lg text-code-lg md:text-headline-sm text-on-surface break-all">maassyy4@gmail.com</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-space-md">
+              <a href="mailto:maassyy4@gmail.com?subject=Hello%20from%20your%20portfolio" class="group inline-flex items-center gap-space-sm px-space-xl py-space-md rounded-lg font-headline-sm text-headline-sm bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container shadow-[0_0_30px_rgba(220,38,38,0.45)] hover:shadow-[0_0_45px_rgba(220,38,38,0.7)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <span>Send Email</span>
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5">send</span>
+              </a>
+              <button id="copyBtn" type="button" class="inline-flex items-center gap-space-sm px-space-lg py-space-md rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright transition-all font-headline-sm text-headline-sm">
+                <span class="material-symbols-outlined text-primary">content_copy</span>
+                <span id="copyText">Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDE -->
+      <aside class="lg:col-span-5 flex flex-col gap-gutter">
+
+        <!-- Direct channel -->
+        <div class="p-space-lg rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.12)] flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <span class="font-code-md text-code-md text-outline">LET'S CONNECT</span>
+            <span class="font-label-caps text-label-caps text-primary uppercase">Direct Channel</span>
+          </div>
+
+          <div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low">
+            <img src="me.jpg" alt="Mohamed Abdalrahman" class="w-14 h-14 rounded-full object-cover shadow-[0_0_14px_rgba(220,38,38,0.4)]"/>
+            <div>
+              <div class="font-headline-sm text-headline-sm">Mohamed Abdalrahman</div>
+              <div class="font-code-md text-code-md text-primary">Frontend Developer</div>
+            </div>
+          </div>
+
+          <!-- Socials -->
+          <div class="space-y-space-sm font-code-md text-code-md">
+            <a href="https://github.com/MOHAMED662006" target="_blank" rel="noopener" class="group flex justify-between items-center p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all">
+              <span class="flex items-center gap-space-sm text-on-surface"><span class="material-symbols-outlined text-primary">code</span>GitHub</span>
+              <span class="text-primary flex items-center gap-1">MOHAMED662006 <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+            </a>
+            <a href="https://linkedin.com/in/mohamed-abd-alrahman-649401355" target="_blank" rel="noopener" class="group flex justify-between items-center p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all">
+              <span class="flex items-center gap-space-sm text-on-surface"><span class="material-symbols-outlined text-primary">work</span>LinkedIn</span>
+              <span class="text-primary flex items-center gap-1">Mohamed Abd Alrahman <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+            </a>
+            <a href="https://www.facebook.com/share/1FG4bqJzZh/" target="_blank" rel="noopener" class="group flex justify-between items-center p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all">
+              <span class="flex items-center gap-space-sm text-on-surface"><span class="material-symbols-outlined text-primary">groups</span>Facebook</span>
+              <span class="text-primary flex items-center gap-1">@mohamed_abdalrahman <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+            </a>
+            <div class="flex justify-between items-center p-space-md rounded-xl bg-surface-container-low">
+              <span class="flex items-center gap-space-sm text-on-surface"><span class="material-symbols-outlined text-primary">public</span>Availability</span>
+              <span class="text-on-surface-variant">Remote • Worldwide</span>
+            </div>
+          </div>
+
+          <div class="pt-space-xs flex items-center justify-between font-label-caps text-label-caps text-outline uppercase tracking-wider">
+            <span>Avg. response &lt; 24h</span>
+            <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>ONLINE</span>
+          </div>
+        </div>
+
+        <!-- Quick facts -->
+        <div class="grid grid-cols-2 gap-gutter-sm">
+          <div class="p-space-lg rounded-xl bg-surface-container-low/80 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] floaty">
+            <div class="font-headline-lg text-headline-lg text-on-surface font-extrabold">24<span class="text-primary-container">h</span></div>
+            <div class="font-code-md text-code-md text-outline">Typical reply time</div>
+          </div>
+          <div class="p-space-lg rounded-xl bg-surface-container-low/80 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] floaty" style="animation-delay:1.2s">
+            <div class="font-headline-lg text-headline-lg text-primary font-extrabold">100<span class="text-on-surface">%</span></div>
+            <div class="font-code-md text-code-md text-outline">Commitment to quality</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-24 max-w-3xl">
+      <span class="font-code-md text-code-md text-primary">// FAQ</span>
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-lg">Before you write</h2>
+      <div class="space-y-space-sm">
+        <details class="group rounded-xl bg-surface-container-low/80 p-space-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+          <summary class="flex cursor-pointer items-center justify-between font-headline-sm text-headline-sm list-none">What kind of projects do you take?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-45">add</span></summary>
+          <p class="pt-space-sm text-on-surface-variant">Websites, web apps, design systems and interactive experiences — from a first idea to a finished, fast and accessible product.</p>
+        </details>
+        <details class="group rounded-xl bg-surface-container-low/80 p-space-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+          <summary class="flex cursor-pointer items-center justify-between font-headline-sm text-headline-sm list-none">How fast can we start?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-45">add</span></summary>
+          <p class="pt-space-sm text-on-surface-variant">Usually within a week after we agree on scope and timeline. Send me the details and we'll plan it together.</p>
+        </details>
+        <details class="group rounded-xl bg-surface-container-low/80 p-space-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+          <summary class="flex cursor-pointer items-center justify-between font-headline-sm text-headline-sm list-none">Do you work remotely?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-45">add</span></summary>
+          <p class="pt-space-sm text-on-surface-variant">Yes — I work with clients and teams all over the world.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-lowest/80 backdrop-blur-xl">
+  <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-gutter">
+    <div class="flex items-center gap-space-md">
+      <img alt="Logo" class="h-8 w-8 rounded-full object-cover opacity-80" src="me.jpg"/>
+      <div class="flex flex-col">
+        <span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">System Status // Operational</span>
+        <span class="font-code-md text-code-md text-on-surface-variant">v4.8.2-reactive-release</span>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-space-lg">
+      <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html">Index</a>
+      <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="projct.html">Architectures</a>
+      <a class="font-body-sm text-body-sm text-primary" href="contact.html">Contact</a>
+    </div>
+    <p class="font-code-md text-code-md text-outline">© 2025 Creative Engineering. Obsidian &amp; Crimson Engine.</p>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-space-lg py-space-sm rounded-lg bg-surface-container-high text-on-surface shadow-[0_8px_30px_rgba(0,0,0,0.6)] font-code-md text-code-md flex items-center gap-space-sm">
+  <span class="material-symbols-outlined text-primary">check_circle</span><span id="toastText"></span>
+</div>
+
+<script>
+  const EMAIL = 'maassyy4@gmail.com';
+  const toast = (t) => {
+    const el = document.getElementById('toast');
+    document.getElementById('toastText').textContent = t;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2500);
+  };
+
+  // copy email
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      document.getElementById('copyText').textContent = 'Copied!';
+      toast('Email copied to clipboard');
+      setTimeout(() => document.getElementById('copyText').textContent = 'Copy Email', 2000);
+    });
+  });
+
+</script>
+</body>
+</html>
